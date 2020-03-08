@@ -1,4 +1,6 @@
 import { createSlice, createSelector } from '@reduxjs/toolkit';
+import axios from 'axios';
+import {apiBaseUrl} from "../config/database";
 
 const slice = createSlice({
 	name: 'favoritesMovies',
@@ -21,6 +23,11 @@ const slice = createSlice({
 const { reducer, actions } = slice;
 
 /* Side effect */
+export const getNew = () => dispatch => {
+	axios.get(apiBaseUrl+'newstories.json', {}).then(({data}) => {
+		console.log('hello la reponse ', data);
+	})
+};
 
 
 /* Selectors */
