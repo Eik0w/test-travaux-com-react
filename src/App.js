@@ -1,5 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
+import { Provider } from 'react-redux';
+import store from './store';
 import './App.css';
 import {makeStyles, ThemeProvider} from '@material-ui/core/styles'
 import theme  from './theme'
@@ -34,11 +36,13 @@ const useStyles = makeStyles((theme) => ({
 function App() {
   const classes = useStyles();
   return (
+      <Provider store={store}>
       <ThemeProvider theme={theme}>
         <div className={classes.root}>
           <Header/>
         </div>
       </ThemeProvider>
+      </Provider>
   );
 }
 
