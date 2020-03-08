@@ -29,6 +29,12 @@ export const getNew = () => dispatch => {
 	})
 };
 
+export const beststories = () => dispatch => {
+	axios.get(apiBaseUrl+'beststories.json', {}).then(({data}) => {
+		console.log('hello la reponse ', data);
+	})
+};
+
 
 /* Selectors */
 const getSlice = state => state.news;

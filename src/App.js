@@ -6,11 +6,12 @@ import './App.css';
 import {makeStyles, ThemeProvider} from '@material-ui/core/styles'
 import theme  from './theme'
 import Header from "./components/Header";
+import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   '@global' : {
     body : {
-      background: '#ddd',
+      background: '#fff',
       height: '100%',
       position : 'relative',
       padding : 0,
@@ -21,16 +22,7 @@ const useStyles = makeStyles((theme) => ({
       }
     }
   },
-  root : {
-    display : 'flex',
-    flexWrap : 'wrap',
-    justifyContent : 'center',
-    height: '100vh',
-    position : 'relative',
-    padding : 0,
-    margin : 0,
-    overflow : 'hidden',
-  }
+
 }));
 
 function App() {
@@ -38,9 +30,14 @@ function App() {
   return (
       <Provider store={store}>
       <ThemeProvider theme={theme}>
-        <div className={classes.root}>
-          <Header/>
-        </div>
+        <BrowserRouter>
+          <Header />
+          <Switch>
+            <Route exact path="/">
+              coucou je suis la homePAge
+            </Route>
+          </Switch>
+        </BrowserRouter>
       </ThemeProvider>
       </Provider>
   );
