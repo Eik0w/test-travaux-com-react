@@ -40,7 +40,7 @@ const useStyles = makeStyles(theme => ({
 		textDecoration: 'none'
 	},
 	containLink: {
-		flex: '0 0 auto',
+		flex: '0 1 auto',
 	},
 	link: {
 		color: 'black',
@@ -63,7 +63,7 @@ function Header(props) {
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-		dispatch(getNew())
+	//	dispatch(getNew())
 	}, []);
 
 	return (
